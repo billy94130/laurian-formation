@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Marketing & IA /// LAURIAN</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brut-bg': '#E0E7FF',
+                        'brut-black': '#000000',
+                        'brut-white': '#ffffff',
+                        'brut-accent': '#FF3C00',
+                        'brut-green': '#00FF41',
+                        'brut-purple': '#9D00FF',
+                        'brut-yellow': '#FAFF00',
+                        'brut-pink': '#FF00D4',
+                        'brut-gold': '#D4AF37',
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'hard': '6px 6px 0px 0px #000000',
+                        'hard-sm': '3px 3px 0px 0px #000000',
+                        'hard-xl': '12px 12px 0px 0px #000000',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            background-image: linear-gradient(#ccc 1px, transparent 1px), linear-gradient(90deg, #ccc 1px, transparent 1px);
+            background-size: 40px 40px;
+            overflow-x: hidden;
+            cursor: none;
+        }
+
+        .border-hard {
+            border: 3px solid black;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .brut-box {
+            background: white;
+            border: 3px solid black;
+            box-shadow: 8px 8px 0px 0px black;
+            transition: all 0.2s ease;
+        }
+
+        .brut-box:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0px 0px black;
+        }
+
+        #custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid black;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            background: white;
+        }
+
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+    </style>
+</head>
+
+<body class="text-black selection:bg-brut-yellow">
+
+    <!-- CURSOR -->
+    <div id="custom-cursor"></div>
+
+    <!-- NAV -->
+    <nav class="fixed top-0 w-full z-50 bg-white border-b-4 border-black flex justify-between items-stretch">
+        <div class="px-6 py-4 bg-black text-white font-display font-bold text-2xl tracking-tighter flex items-center">
+            FORMATION<span class="text-brut-accent">/</span>IA
+        </div>
+        <div
+            class="hidden md:flex flex-1 items-center overflow-hidden bg-brut-yellow border-l-4 border-black border-r-4">
+            <div class="marquee-container w-full font-mono font-bold text-sm">
+                <div class="marquee-content">
+                    /// MARKETING & IA /// CONSTRUIS TES PROPRES OUTILS /// GARDE LE CONTRÔLE ///
+                    /// MARKETING & IA /// CONSTRUIS TES PROPRES OUTILS /// GARDE LE CONTRÔLE ///
+                </div>
+            </div>
+        </div>
+        <div
+            class="px-6 py-4 font-mono font-bold hover:bg-brut-accent hover:text-white transition-colors cursor-pointer text-sm flex items-center">
+            5 PROJETS
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="pt-32 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
+        <div class="bg-white border-hard p-8 md:p-12 shadow-hard mb-12 relative">
+            <div
+                class="absolute -top-4 -left-4 bg-brut-purple text-white font-mono font-bold px-4 py-2 border-hard transform -rotate-2">
+                IDÉES FORMATION
+            </div>
+
+            <h1 class="font-display font-black text-5xl md:text-7xl mb-8 leading-none">
+                Hello Laurian,<br>
+                <span class="text-brut-accent">voici mes idées 👇</span>
+            </h1>
+
+            <div class="space-y-6 text-lg font-sans font-medium max-w-4xl">
+                <p>J'espère que tu vas bien ! Avant notre call de tout à l'heure, j'ai posé quelques idées de projets
+                    pour la formation.</p>
+                <p>C'est encore brut mais dis-moi ce que tu en penses.</p>
+                <p class="font-bold">L'objectif c'est que les gens repartent pas juste avec des notes. Ils ont vraiment
+                    construit quelque chose pendant la formation qu'ils peuvent réutiliser après.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROJECTS -->
+    <main class="px-4 md:px-8 max-w-7xl mx-auto pb-32 space-y-16">
+
+        <!-- PROJET 1 -->
+        <section class="brut-box p-0 project-card">
+            <div class="bg-black text-white p-4 md:p-6 flex justify-between items-center border-b-4 border-black">
+                <h2 class="font-display font-black text-2xl md:text-3xl text-brut-green">01. Outil de scraping de leads
+                </h2>
+                <span class="font-mono text-sm border border-white px-2 py-1">Claude Code</span>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <p class="mb-6 text-lg">Plutôt que de payer des outils comme Apollo ou Kaspr tous les mois, on montre
+                    comment se faire son propre outil.</p>
+
+                <p class="mb-6">Par exemple tu bosses dans l'immobilier et tu veux récupérer la liste de tous les
+                    diagnostiqueurs de ta ville pour leur proposer un partenariat. Aujourd'hui soit tu passes 3h sur
+                    Google à copier coller dans Excel, soit tu paies un outil.</p>
+
+                <p class="mb-6">On construit un outil qui fait ça tout seul. Tu lui dis "je veux les diagnostiqueurs de
+                    Lyon", il va chercher sur le web, il récupère les emails, les numéros, et il te sort un fichier
+                    propre.</p>
+
+                <div class="bg-brut-green/20 p-6 border-l-4 border-brut-green">
+                    <p class="font-bold">Et ça tourne même la nuit, pas besoin de garder l'ordi allumé.</p>
+                    <p class="mt-2">Tu lances avant de partir, tu retrouves tes résultats le lendemain. C'est gratuit à
+                        utiliser après, pas de crédits, pas de limites.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJET 2 -->
+        <section class="brut-box p-0 project-card">
+            <div class="bg-brut-purple text-white p-4 md:p-6 flex justify-between items-center border-b-4 border-black">
+                <h2 class="font-display font-black text-2xl md:text-3xl">02. Blog automatisé GEO & SEO</h2>
+                <span class="font-mono text-sm border border-white px-2 py-1 bg-black">Antigravity + n8n</span>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <p class="mb-6 text-lg">L'idée c'est pas juste de produire des articles. C'est de se positionner sur des
+                    requêtes que les autres ignorent.</p>
+
+                <div class="bg-brut-purple/10 p-6 border-l-4 border-brut-purple mb-6">
+                    <p class="font-bold mb-2">GEO (Generative Engine Optimization)</p>
+                    <p>Comment apparaître dans les réponses des moteurs IA comme Perplexity, ChatGPT Search, etc. Plus
+                        le SEO classique mais avec une approche locale et longue traîne.</p>
+                </div>
+
+                <p class="mb-6">On identifie des requêtes précises. Par exemple au lieu de "assurance auto" (impossible
+                    à ranker), on cible "assurance auto jeune conducteur Toulouse" ou "comparatif assurance scooter
+                    électrique Paris".</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 border-hard">
+                        <h4 class="font-bold border-b border-black mb-3 pb-2">n8n prend le relais</h4>
+                        <ul class="text-sm space-y-2">
+                            <li>• Génération des articles (H1, H2, maillage)</li>
+                            <li>• Publication automatique sur WordPress</li>
+                            <li>• Mise à jour des anciens articles</li>
+                            <li>• Gestion des liens internes</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brut-yellow p-6 border-hard flex items-center justify-center">
+                        <p class="font-bold text-center">Tu définis ta stratégie une fois,<br>après il exécute.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJET 3 -->
+        <section class="brut-box p-0 project-card">
+            <div class="bg-brut-accent text-white p-4 md:p-6 flex justify-between items-center border-b-4 border-black">
+                <h2 class="font-display font-black text-2xl md:text-3xl">03. Prospection email intelligente</h2>
+                <span class="font-mono text-sm border border-white px-2 py-1 bg-black">n8n</span>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <p class="mb-6 text-lg">La plupart des emails de prospection finissent ignorés parce qu'ils se
+                    ressemblent tous.</p>
+
+                <p class="mb-6">L'idée ici c'est de montrer comment faire des séquences qui ont l'air personnalisées.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-gray-50 p-6 border-hard text-center">
+                        <span class="text-3xl mb-2 block">📧</span>
+                        <p class="font-bold">Envoi initial</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 border-hard text-center">
+                        <span class="text-3xl mb-2 block">🔄</span>
+                        <p class="font-bold">Relances auto</p>
+                        <p class="text-sm text-gray-600">si pas de réponse</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 border-hard text-center">
+                        <span class="text-3xl mb-2 block">✅</span>
+                        <p class="font-bold">Stop auto</p>
+                        <p class="text-sm text-gray-600">quand réponse</p>
+                    </div>
+                </div>
+
+                <div class="bg-brut-green/20 p-6 border-l-4 border-brut-green">
+                    <p class="font-bold">Ça peut se combiner avec le projet 1.</p>
+                    <p class="mt-2">Tu récupères tes leads avec ton outil, ensuite tu les contactes automatiquement.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJET 4 -->
+        <section class="brut-box p-0 project-card">
+            <div class="bg-brut-yellow text-black p-4 md:p-6 flex justify-between items-center border-b-4 border-black">
+                <h2 class="font-display font-black text-2xl md:text-3xl">04. Vidéos UGC automatisées</h2>
+                <span class="font-mono text-sm border border-black px-2 py-1 bg-white">n8n</span>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <p class="mb-6 text-lg">L'UGC c'est le format qui marche le mieux sur les réseaux en ce moment. Plus
+                    authentique que les pubs classiques.</p>
+
+                <p class="mb-6">Le souci c'est que produire ces vidéos ça prend du temps. Trouver quelqu'un, écrire le
+                    script, tourner, monter...</p>
+
+                <div class="bg-black text-white p-8 border-hard shadow-hard mb-6">
+                    <h4 class="font-bold text-brut-yellow mb-4 text-xl">Une IA réaliste fait la pub à ta place</h4>
+                    <p>Tu lui donnes le message, elle génère la vidéo.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 p-4 border-hard">
+                        <p class="font-mono text-sm font-bold text-brut-purple">01.</p>
+                        <p>Tu définis le message (témoignages, FAQ, arguments)</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 border-hard">
+                        <p class="font-mono text-sm font-bold text-brut-purple">02.</p>
+                        <p>L'IA génère un avatar réaliste face caméra</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 border-hard">
+                        <p class="font-mono text-sm font-bold text-brut-purple">03.</p>
+                        <p>Vidéo adaptée (vertical TikTok, carré feed)</p>
+                    </div>
+                </div>
+
+                <p class="mt-6 font-bold text-center">En quelques minutes tu as une vidéo prête à publier, sans
+                    tournage, sans montage.</p>
+            </div>
+        </section>
+
+        <!-- PROJET 5 -->
+        <section class="brut-box p-0 project-card">
+            <div class="bg-brut-green text-black p-4 md:p-6 flex justify-between items-center border-b-4 border-black">
+                <h2 class="font-display font-black text-2xl md:text-3xl">05. Assistant stratégie marketing</h2>
+                <span class="font-mono text-sm border border-black px-2 py-1 bg-white">Antigravity</span>
+            </div>
+
+            <div class="p-8 md:p-12">
+                <p class="mb-6 text-lg">Celui-là c'est différent, c'est pas de la production.</p>
+
+                <p class="mb-6">C'est un outil pour prendre du recul. Quand tu as plein de choses à faire et que tu ne
+                    sais plus par où commencer, l'assistant t'aide à prioriser, à voir ce qui est vraiment important.
+                </p>
+
+                <div class="bg-brut-green/20 p-8 border-hard">
+                    <p class="text-xl mb-4">Tu lui expliques ta situation, il te pose des questions, et tu ressors avec
+                        un plan clair.</p>
+                    <p class="font-bold text-2xl">Pas 47 actions, juste 2-3 priorités pour la semaine.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECAP -->
+        <section class="brut-box p-0 bg-black text-white">
+            <div class="p-8 md:p-12">
+                <h2 class="font-display font-black text-4xl text-brut-accent mb-8 border-b-4 border-brut-accent pb-4">
+                    Récap</h2>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-gray-700">
+                                <th class="py-4 font-mono text-brut-yellow">Projet</th>
+                                <th class="py-4 font-mono text-brut-yellow">C'est quoi</th>
+                                <th class="py-4 font-mono text-brut-yellow">Outil</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-mono text-sm">
+                            <tr class="border-b border-gray-800">
+                                <td class="py-4">1</td>
+                                <td class="py-4">Récupérer des leads</td>
+                                <td class="py-4 text-brut-green">Claude Code</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-4">2</td>
+                                <td class="py-4">Blog automatique GEO/SEO</td>
+                                <td class="py-4 text-brut-purple">Antigravity + n8n</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-4">3</td>
+                                <td class="py-4">Prospection email</td>
+                                <td class="py-4 text-brut-accent">n8n</td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="py-4">4</td>
+                                <td class="py-4">Vidéos UGC</td>
+                                <td class="py-4 text-brut-yellow">n8n</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4">5</td>
+                                <td class="py-4">Assistant stratégie</td>
+                                <td class="py-4 text-brut-green">Antigravity</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-20 px-4 md:px-8 border-t-8 border-brut-accent">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="font-display font-black text-4xl md:text-6xl mb-8">
+                Voilà les grandes lignes.<br>
+                <span class="text-brut-accent">On en parle tout à l'heure ?</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor
+        const cursor = document.getElementById('custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Smooth Scroll with Lenis
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 90%"
+                }
+            });
+        });
+
+        gsap.from("h1", { y: 50, opacity: 0, duration: 1, delay: 0.3, ease: "power3.out" });
+    </script>
+</body>
+
+</html>
